@@ -10,7 +10,7 @@ from config import BANNED_USERS
 
 
 @app.on_message(
-    filters.command(["seek", "cseek", "seekback", "cseekback"])
+    filters.command(["پرش", "عقب"],prefixes=[''])
     & filters.group
     & ~BANNED_USERS
 )
@@ -31,7 +31,7 @@ async def seek_comm(cli, message: Message, _, chat_id):
     duration_played = int(playing[0]["played"])
     duration_to_skip = int(query)
     duration = playing[0]["dur"]
-    if message.command[0][-2] == "c":
+    if message.command[0][-2] == "عقب":
         if (duration_played - duration_to_skip) <= 10:
             return await message.reply_text(
                 text=_["admin_23"].format(seconds_to_min(duration_played), duration),
