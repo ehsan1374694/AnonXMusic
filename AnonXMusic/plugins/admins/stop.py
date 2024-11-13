@@ -9,7 +9,6 @@ from AnonXMusic.utils.inline import close_markup
 from config import BANNED_USERS
 
 
-
 @app.on_message(
     filters.command(["اتمام", "پایان", "cend", "cstop"],prefixes=['']) & filters.group & ~BANNED_USERS
 )
