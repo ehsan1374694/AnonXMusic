@@ -24,19 +24,18 @@ from AnonXMusic.utils.logger import play_logs
 from AnonXMusic.utils.stream.stream import stream
 from config import BANNED_USERS, lyrical
 
-
 @app.on_message(
     filters.command(
         [
-            "play",
-            "vplay",
+            "پخش",
+            "#پخش",
             "cplay",
             "cvplay",
             "playforce",
             "vplayforce",
             "cplayforce",
             "cvplayforce",
-        ]
+        ],prefixes=['']
     )
     & filters.group
     & ~BANNED_USERS
