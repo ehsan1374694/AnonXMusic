@@ -13,8 +13,9 @@ from AnonXMusic.utils.thumbnails import get_thumb
 from config import BANNED_USERS
 
 
+
 @app.on_message(
-    filters.command(["skip", "cskip", "next", "cnext"],prefixes=['']) & filters.group & ~BANNED_USERS
+    filters.command(["بعدی", "cskip", "next", "cnext"],prefixes=['']) & filters.group & ~BANNED_USERS
 )
 @AdminRightsCheck
 async def skip(cli, message: Message, _, chat_id):
